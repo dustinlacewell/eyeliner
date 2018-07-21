@@ -1,4 +1,14 @@
-* Eyeliner
+#+title: Eyeliner
+#+language: en
+#+startup: overview indent align
+#+babel: :cache no
+#+options: ^:nil num:nil tags:nil
+#+html_head: <link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+#+html_head: <link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+#+html_head: <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+#+html_head: <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+#+html_head: <script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
+#+html_head: <script type="text/javascript" src="https://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
 
 Makeup on your mode-line.
 
@@ -16,14 +26,14 @@ Eyeliner provides an API for customizing your mode-line using colors and icons.
 /staged or unstaged changes/
 [[./git-changes.png]]
 
-** Dependencies
+* Dependencies
 
 - [[https://github.com/magnars/dash.el][dash.el]] a modern list library
 - [[https://github.com/magit/magit][magit]] for git status support
 - [[https://github.com/TheBB/spaceline][spaceline]] provides the segemented mode-line support
 - [[https://github.com/domtronn/all-the-icons.el][all-the-icons]] for multiple icon-font support
 
-** Quickstart
+* Quickstart
 
 The quickest way to setup Eyeliner is to use [[https://github.com/raxod502/straight.el][straight.el]]'s [[https://github.com/jwiegley/use-package][use-package]] [[https://github.com/raxod502/straight.el#integration-with-use-package][support]].
 
@@ -39,7 +49,7 @@ The quickest way to setup Eyeliner is to use [[https://github.com/raxod502/strai
 
 This should give you the default mode-line segments and colors.
 
-*** Default Mode-line
+** Default Mode-line
 
 The default mode-line contains the following segments:
 
@@ -50,7 +60,7 @@ The default mode-line contains the following segments:
 - =mode-icon= displays an icon for the current major-mode
 - =buffer-name= displays the name of the current buffer
 
-** User Guide
+* User Guide
 
 Using Eyeliner is centered around three main concepts:
 
@@ -60,7 +70,7 @@ Using Eyeliner is centered around three main concepts:
 
 This guide will cover everything you need to know!
 
-*** Segments
+** Segments
 
 Segments represent the different parts making up your mode-line. They are defined
 using =(eyeline/segment NAME BODY &rest PROPS)=. =BODY= should be a form that will be
@@ -83,7 +93,7 @@ control the coloring and font:
 It is important to note that a Segment's =BODY= is not evaluated when =eyeliner/segment=
 is called, but each time the mode-line is rendered.
 
-**** Dynamic Segments
+*** Dynamic Segments
 
 A Segment's =BODY= can contain whatever logic is useful. For example, we can change
 what face is used based on whether the buffer is modified:
@@ -109,7 +119,7 @@ binding which is =t= or =nil= depending on whether the buffer is active:
 
 Later, we'll see how Styles make this easier.
 
-**** Segment Properties
+*** Segment Properties
 
 After the =BODY=, any number of =PROPS= can be passed to =eyeliner/segment= which have the
 same effect as described in the [[https://github.com/TheBB/spaceline#properties][Spaceline documentation]]. These can be used to tighten
@@ -121,7 +131,7 @@ the margins around a Segment, or to merge it with its neighbor:
     :skip-alternate t)
 #+end_src
 
-*** Styles
+** Styles
 
 Styles help you apply colors and other face properties to your Segments. Styles are
 defined with =(eyeliner/style NAME COLOR DARKNESS DESATURATION PROPS)=:
@@ -147,7 +157,7 @@ Each Style is a function which takes text you want to propertize. Additionally,
 Styles will automatically propertize with a "dimmed" color when the =active= binding is
 =nil=.
 
-**** Controlling Dimming
+*** Controlling Dimming
 
 You may want to control how Eyeliner dims your Styles for inactive buffers. Simply
 use the =DARKNESS= and =DESATURATION= parameters:
@@ -162,12 +172,12 @@ be reduced to. In this case, each is reduced to just a quarter of the original.
 The default dimming can bet set with =eyeliner/default-darkness= and
 =eyeliner/default-desaturation=.
 
-**** Other Face Properties
+*** Other Face Properties
 
 The final parameter to =eyeliner/style=, =PROPS= can be used to customize your Style
 faces beyond just foreground color.
 
-*** Icons
+** Icons
 
 Icons are a lot like Styles but they don't accept any parameters and always return
 the specified font-icon. You can define them with =(eyeliner/icon NAME ICON-NAME
@@ -181,7 +191,7 @@ This defines an Icon named =eyeliner/octoface-icon= which when called will retur
 font-icon propertized in a green face. Just like with Styles you can control dimming
 with =DARKNESS= and =DESATURATION= and additional face properties with =PROPS=.
 
-**** Display Properties
+*** Display Properties
 
 Unlike with Styles, Icons additionally support specifying Display Properties with
 =DISPLAY=. This can be used to change the height of the Icon or raise it up and down:
@@ -191,14 +201,14 @@ Unlike with Styles, Icons additionally support specifying Display Properties wit
     '(:height 0.8 :raise -0.1))
 #+end_src
 
-**** Icon Names
+*** Icon Names
 
 Icons are sourced from [[https://github.com/domtronn/all-the-icons.el][all-the-icons.el]] so to find the name of an font icon you want
 to use you can look here:
 
 https://github.com/domtronn/all-the-icons.el#resource-fonts
 
-*** Configuration
+** Configuration
 
 As the Quick Start mentioned, the easiest way to install and configure Eyeliner is to
 use straight.el
@@ -217,7 +227,7 @@ But you can use use-package without straight.el if you install Eyeliner to your
 =load-path= some other way.
 
 
-**** Designing Your Mode-line
+*** Designing Your Mode-line
 
 Specifying what Segments make up your mode-line can be done in two different
 ways. The first is by assigning lists containing the names of your Segments to
@@ -269,7 +279,7 @@ Alternatively, you can pass these directly to =(eyeliner/install)=:
 Any Segment properties specified here will override those defined on the Segment
 itself. Refer to the [[https://github.com/TheBB/spaceline#properties][Spaceline documentation]] to learn aobut them.
 
-**** Customizing Built-In Segment Colors
+*** Customizing Built-In Segment Colors
 
 Eyeliner comes with a number of default Segments to get you started. They all
 utilize some default colors which you can customize:
@@ -297,32 +307,32 @@ library. This can be done using the =:init= section of a =(use-package)= call:
 #+end_src
 
 
-*** Built-In Segments
-**** buffer-modified
+** Built-In Segments
+*** buffer-modified
 
 - *Buffer modified*: =circle-o= icon in =eyeliner/cool-color=
 - *Buffer unmodified*: =dot-circle-o= icon in =eyeliner/warm-color=
 
-**** buffer-name
+*** buffer-name
 
 - *Buffer modified*: the buffer name in =eyeliner/plain-color=
 - *Buffer unmodified*: the buffer name in =eyeliner/warm-color=
 
-**** branch-icon
+*** branch-icon
 
 - *No staged or unstaged changes*: =git-branch= icon in =eyeliner/cool-color=
 - *Staged or unstaged changes*: =diff-added= icon in =eyeliner/warm-color=
 
-**** branch-name
+*** branch-name
 
 - *No staged or unstaged changes*: the branch name in =eyeliner/cool-color=
 - *Staged or unstaged changes*: the branch name in =eyeliner/warm-color=
 
-**** project-name
+*** project-name
 
 =(projectile-project-name)= in =eyeliner/plain-color=
 
-**** mode-icon
+*** mode-icon
 
 Major-mode relevant icon in =eyeliner/plain-color=
 

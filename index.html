@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-07-21 Sat 15:24 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Eyeliner</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Eyeliner</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org5f0917a">Dependencies</a></li>
+<li><a href="#org1ef3af8">Quickstart</a>
+<ul>
+<li><a href="#org3e4444a">Default Mode-line</a></li>
+</ul>
+</li>
+<li><a href="#org8b2f206">User Guide</a>
+<ul>
+<li><a href="#org6939d4d">Segments</a>
+<ul>
+<li><a href="#org42ffcfd">Dynamic Segments</a></li>
+<li><a href="#orgb72f067">Segment Properties</a></li>
+</ul>
+</li>
+<li><a href="#org1e502fa">Styles</a>
+<ul>
+<li><a href="#orgfbd3927">Controlling Dimming</a></li>
+<li><a href="#org5ca4d8e">Other Face Properties</a></li>
+</ul>
+</li>
+<li><a href="#orgb001eb2">Icons</a>
+<ul>
+<li><a href="#org82769f1">Display Properties</a></li>
+<li><a href="#org5cae822">Icon Names</a></li>
+</ul>
+</li>
+<li><a href="#orgee93509">Configuration</a>
+<ul>
+<li><a href="#org93d3e26">Designing Your Mode-line</a></li>
+<li><a href="#org1483428">Customizing Built-In Segment Colors</a></li>
+</ul>
+</li>
+<li><a href="#org0131bda">Built-In Segments</a>
+<ul>
+<li><a href="#org584f512">buffer-modified</a></li>
+<li><a href="#orge513adf">buffer-name</a></li>
+<li><a href="#org7cacad2">branch-icon</a></li>
+<li><a href="#org599ad2f">branch-name</a></li>
+<li><a href="#orgcdfd4b0">project-name</a></li>
+<li><a href="#org06a3799">mode-icon</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+Makeup on your mode-line.
+</p>
+
+<p>
+Eyeliner provides an API for customizing your mode-line using colors and icons.
+</p>
+
+<p>
+<i>active unmodified buffer</i>
+<img src="./unmodified.png" alt="unmodified.png" />
+</p>
+
+<p>
+<i>inactive unmodified buffer (dimmed)</i>
+<img src="./dimmed.png" alt="dimmed.png" />
+</p>
+
+<p>
+<i>modified buffer</i>
+<img src="./modified.png" alt="modified.png" />
+</p>
+
+<p>
+<i>staged or unstaged changes</i>
+<img src="./git-changes.png" alt="git-changes.png" />
+</p>
+
+<div id="outline-container-org5f0917a" class="outline-2">
+<h2 id="org5f0917a">Dependencies</h2>
+<div class="outline-text-2" id="text-org5f0917a">
+<ul class="org-ul">
+<li><a href="https://github.com/magnars/dash.el">dash.el</a> a modern list library</li>
+<li><a href="https://github.com/magit/magit">magit</a> for git status support</li>
+<li><a href="https://github.com/TheBB/spaceline">spaceline</a> provides the segemented mode-line support</li>
+<li><a href="https://github.com/domtronn/all-the-icons.el">all-the-icons</a> for multiple icon-font support</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1ef3af8" class="outline-2">
+<h2 id="org1ef3af8">Quickstart</h2>
+<div class="outline-text-2" id="text-org1ef3af8">
+<p>
+The quickest way to setup Eyeliner is to use <a href="https://github.com/raxod502/straight.el">straight.el</a>'s <a href="https://github.com/jwiegley/use-package">use-package</a> <a href="https://github.com/raxod502/straight.el#integration-with-use-package">support</a>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #e0c584;">(</span><span style="color: #8AC6F2;">use-package</span> <span style="color: #635770;">eyeliner</span>
+  <span style="color: #BF93C3;">:straight</span> <span style="color: #aa84e0;">(</span>eyeliner <span style="color: #BF93C3;">:type</span> git
+                      <span style="color: #BF93C3;">:host</span> github
+                      <span style="color: #BF93C3;">:repo</span> <span style="color: #86B187;">"dustinlacewell/eyeliner"</span><span style="color: #aa84e0;">)</span>
+  <span style="color: #BF93C3;">:config</span>
+  <span style="color: #aa84e0;">(</span><span style="color: #8AC6F2;">require</span> '<span style="color: #635770;">eyeliner</span><span style="color: #aa84e0;">)</span>
+  <span style="color: #aa84e0;">(</span>eyeliner/install<span style="color: #aa84e0;">)</span><span style="color: #e0c584;">)</span>
+</pre>
+</div>
+
+<p>
+This should give you the default mode-line segments and colors.
+</p>
+</div>
+
+<div id="outline-container-org3e4444a" class="outline-3">
+<h3 id="org3e4444a">Default Mode-line</h3>
+<div class="outline-text-3" id="text-org3e4444a">
+<p>
+The default mode-line contains the following segments:
+</p>
+
+<ul class="org-ul">
+<li><code>buffer-modified</code>  a circle icon indicating the buffer modification state</li>
+<li><code>branch-icon</code> an icon indicating there are staged or unstaged git changes</li>
+<li><code>branch-name</code> displays the name of the current git branch</li>
+<li><code>project-name</code> displays the name of the current Projectile project</li>
+<li><code>mode-icon</code> displays an icon for the current major-mode</li>
+<li><code>buffer-name</code> displays the name of the current buffer</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8b2f206" class="outline-2">
+<h2 id="org8b2f206">User Guide</h2>
+<div class="outline-text-2" id="text-org8b2f206">
+<p>
+Using Eyeliner is centered around three main concepts:
+</p>
+
+<ul class="org-ul">
+<li><code>Segments</code> which represent each part of your mode-line</li>
+<li><code>Styles</code> which are like dynamic faces that support dimming</li>
+<li><code>Icons</code> which are unicode characters that support styling</li>
+</ul>
+
+<p>
+This guide will cover everything you need to know!
+</p>
+</div>
+
+<div id="outline-container-org6939d4d" class="outline-3">
+<h3 id="org6939d4d">Segments</h3>
+<div class="outline-text-3" id="text-org6939d4d">
+<p>
+Segments represent the different parts making up your mode-line. They are defined
+using <code>(eyeline/segment NAME BODY &amp;rest PROPS)</code>. <code>BODY</code> should be a form that will be
+evaluated to produce the content of the mode-line Segment:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #e0c584;">(</span><span style="color: #8AC6F2;">eyeliner/segment</span> my/buffer-name-segment <span style="color: #aa84e0;">(</span>buffer-name<span style="color: #aa84e0;">)</span><span style="color: #e0c584;">)</span>
+</pre>
+</div>
+
+<p>
+This creates a segment called <code>my/buffer-name-segment</code> which just returns the result of
+<code>(buffer-name)</code>. Segments can also return "propertized text" which can be used to
+control the coloring and font:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #e0c584;">(</span><span style="color: #8AC6F2;">eyeliner/segment</span> my/buffer-name-segment
+  <span style="color: #aa84e0;">(</span>propertize <span style="color: #84e090;">(</span>buffer-name<span style="color: #84e090;">)</span>
+    'face '<span style="color: #84e090;">(</span><span style="color: #BF93C3;">:foreground</span> <span style="color: #86B187;">"blue"</span> <span style="color: #BF93C3;">:family</span> <span style="color: #86B187;">"monospace"</span><span style="color: #84e090;">)</span><span style="color: #aa84e0;">)</span><span style="color: #e0c584;">)</span>
+</pre>
+</div>
+
+<p>
+It is important to note that a Segment's <code>BODY</code> is not evaluated when <code>eyeliner/segment</code>
+is called, but each time the mode-line is rendered.
+</p>
+</div>
+
+<div id="outline-container-org42ffcfd" class="outline-4">
+<h4 id="org42ffcfd">Dynamic Segments</h4>
+<div class="outline-text-4" id="text-org42ffcfd">
+<p>
+A Segment's <code>BODY</code> can contain whatever logic is useful. For example, we can change
+what face is used based on whether the buffer is modified:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #e0c584;">(</span><span style="color: #8AC6F2;">eyeliner/segment</span> my/buffer-name-segment
+  <span style="color: #aa84e0;">(</span><span style="color: #8AC6F2;">let*</span> <span style="color: #84e090;">(</span><span style="color: #e08493;">(</span>buffer-state <span style="color: #84aee0;">(</span>format-mode-line <span style="color: #86B187;">"%*"</span><span style="color: #84aee0;">)</span><span style="color: #e08493;">)</span><span style="color: #84e090;">)</span>
+    <span style="color: #84e090;">(</span>propertize <span style="color: #e08493;">(</span>buffer-name<span style="color: #e08493;">)</span>
+      'face <span style="color: #e08493;">(</span><span style="color: #8AC6F2;">if</span> <span style="color: #84aee0;">(</span>string= buffer-state <span style="color: #86B187;">"-"</span><span style="color: #84aee0;">)</span>
+                '<span style="color: #84aee0;">(</span><span style="color: #BF93C3;">:foreground</span> <span style="color: #86B187;">"white"</span><span style="color: #84aee0;">)</span>
+              '<span style="color: #84aee0;">(</span><span style="color: #BF93C3;">:foreground</span> <span style="color: #86B187;">"orange"</span><span style="color: #84aee0;">)</span><span style="color: #e08493;">)</span><span style="color: #84e090;">)</span><span style="color: #aa84e0;">)</span><span style="color: #e0c584;">)</span>
+</pre>
+</div>
+
+<p>
+Another way Segments can be dynamic is by depending on the value of the <code>active</code>
+binding which is <code>t</code> or <code>nil</code> depending on whether the buffer is active:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #e0c584;">(</span><span style="color: #8AC6F2;">eyeliner/segment</span> my/buffer-name-segment
+  <span style="color: #aa84e0;">(</span>propertize <span style="color: #84e090;">(</span>buffer-name<span style="color: #84e090;">)</span>
+      'face <span style="color: #84e090;">(</span><span style="color: #8AC6F2;">if</span> active '<span style="color: #e08493;">(</span><span style="color: #BF93C3;">:foreground</span> <span style="color: #86B187;">"white"</span><span style="color: #e08493;">)</span>
+              '<span style="color: #e08493;">(</span><span style="color: #BF93C3;">:foreground</span> <span style="color: #86B187;">"grey"</span><span style="color: #e08493;">)</span><span style="color: #84e090;">)</span><span style="color: #aa84e0;">)</span><span style="color: #e0c584;">)</span>
+</pre>
+</div>
+
+<p>
+Later, we'll see how Styles make this easier.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb72f067" class="outline-4">
+<h4 id="orgb72f067">Segment Properties</h4>
+<div class="outline-text-4" id="text-orgb72f067">
+<p>
+After the <code>BODY</code>, any number of <code>PROPS</code> can be passed to <code>eyeliner/segment</code> which have the
+same effect as described in the <a href="https://github.com/TheBB/spaceline#properties">Spaceline documentation</a>. These can be used to tighten
+the margins around a Segment, or to merge it with its neighbor:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #e0c584;">(</span><span style="color: #8AC6F2;">eyeliner/segment</span> my/buffer-name-segment <span style="color: #aa84e0;">(</span>buffer-name<span style="color: #aa84e0;">)</span>
+  <span style="color: #BF93C3;">:tight</span> t
+  <span style="color: #BF93C3;">:skip-alternate</span> t<span style="color: #e0c584;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1e502fa" class="outline-3">
+<h3 id="org1e502fa">Styles</h3>
+<div class="outline-text-3" id="text-org1e502fa">
+<p>
+Styles help you apply colors and other face properties to your Segments. Styles are
+defined with <code>(eyeliner/style NAME COLOR DARKNESS DESATURATION PROPS)</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #e0c584;">(</span>eyeliner/style 'default <span style="color: #86B187;">"white"</span><span style="color: #e0c584;">)</span>
+<span style="color: #e0c584;">(</span>eyeliner/style 'warning <span style="color: #86B187;">"red"</span><span style="color: #e0c584;">)</span>
+</pre>
+</div>
+
+<p>
+This creates two Styles called <code>eyeliner/default-style</code> and <code>eyeliner/warning-style</code>
+which can be used to propertize text within your segments. Here is the
+<code>my/buffer-name-segment</code> from before, now with Style support:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #e0c584;">(</span><span style="color: #8AC6F2;">eyeliner/segment</span> my/buffer-name-segment
+  <span style="color: #aa84e0;">(</span><span style="color: #8AC6F2;">let*</span> <span style="color: #84e090;">(</span><span style="color: #e08493;">(</span>buffer-state <span style="color: #84aee0;">(</span>format-mode-line <span style="color: #86B187;">"%*"</span><span style="color: #84aee0;">)</span><span style="color: #e08493;">)</span><span style="color: #84e090;">)</span>
+    <span style="color: #84e090;">(</span><span style="color: #8AC6F2;">if</span> <span style="color: #e08493;">(</span>string= buffer-state <span style="color: #86B187;">"-"</span><span style="color: #e08493;">)</span>
+        <span style="color: #e08493;">(</span>eyeliner/default-style <span style="color: #84aee0;">(</span>buffer-name<span style="color: #84aee0;">)</span><span style="color: #e08493;">)</span>
+      <span style="color: #e08493;">(</span>eyeliner/warning-style <span style="color: #84aee0;">(</span>buffer-name<span style="color: #84aee0;">)</span><span style="color: #e08493;">)</span><span style="color: #84e090;">)</span><span style="color: #aa84e0;">)</span><span style="color: #e0c584;">)</span>
+</pre>
+</div>
+
+<p>
+Each Style is a function which takes text you want to propertize. Additionally,
+Styles will automatically propertize with a "dimmed" color when the <code>active</code> binding is
+<code>nil</code>.
+</p>
+</div>
+
+<div id="outline-container-orgfbd3927" class="outline-4">
+<h4 id="orgfbd3927">Controlling Dimming</h4>
+<div class="outline-text-4" id="text-orgfbd3927">
+<p>
+You may want to control how Eyeliner dims your Styles for inactive buffers. Simply
+use the <code>DARKNESS</code> and <code>DESATURATION</code> parameters:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #e0c584;">(</span>eyeliner/style 'warning <span style="color: #86B187;">"red"</span> 25 25<span style="color: #e0c584;">)</span>
+</pre>
+</div>
+
+<p>
+The values specify, from 0 to 100, what percent the brightness and saturation should
+be reduced to. In this case, each is reduced to just a quarter of the original.
+</p>
+
+<p>
+The default dimming can bet set with <code>eyeliner/default-darkness</code> and
+<code>eyeliner/default-desaturation</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5ca4d8e" class="outline-4">
+<h4 id="org5ca4d8e">Other Face Properties</h4>
+<div class="outline-text-4" id="text-org5ca4d8e">
+<p>
+The final parameter to <code>eyeliner/style</code>, <code>PROPS</code> can be used to customize your Style
+faces beyond just foreground color.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb001eb2" class="outline-3">
+<h3 id="orgb001eb2">Icons</h3>
+<div class="outline-text-3" id="text-orgb001eb2">
+<p>
+Icons are a lot like Styles but they don't accept any parameters and always return
+the specified font-icon. You can define them with <code>(eyeliner/icon NAME ICON-NAME
+COLOR &amp;optional DARKNESS DESATURATION PROPS DISPLAY)</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #e0c584;">(</span><span style="color: #8AC6F2;">eyeliner/icon</span> octoface <span style="color: #86B187;">"octoface"</span> <span style="color: #86B187;">"green"</span><span style="color: #e0c584;">)</span>
+</pre>
+</div>
+
+<p>
+This defines an Icon named <code>eyeliner/octoface-icon</code> which when called will return that
+font-icon propertized in a green face. Just like with Styles you can control dimming
+with <code>DARKNESS</code> and <code>DESATURATION</code> and additional face properties with <code>PROPS</code>.
+</p>
+</div>
+
+<div id="outline-container-org82769f1" class="outline-4">
+<h4 id="org82769f1">Display Properties</h4>
+<div class="outline-text-4" id="text-org82769f1">
+<p>
+Unlike with Styles, Icons additionally support specifying Display Properties with
+<code>DISPLAY</code>. This can be used to change the height of the Icon or raise it up and down:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #e0c584;">(</span><span style="color: #8AC6F2;">eyeliner/icon</span> octoface <span style="color: #86B187;">"octoface"</span> <span style="color: #86B187;">"green"</span> nil nil nil
+  '<span style="color: #aa84e0;">(</span><span style="color: #BF93C3;">:height</span> 0.8 <span style="color: #BF93C3;">:raise</span> -0.1<span style="color: #aa84e0;">)</span><span style="color: #e0c584;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5cae822" class="outline-4">
+<h4 id="org5cae822">Icon Names</h4>
+<div class="outline-text-4" id="text-org5cae822">
+<p>
+Icons are sourced from <a href="https://github.com/domtronn/all-the-icons.el">all-the-icons.el</a> so to find the name of an font icon you want
+to use you can look here:
+</p>
+
+<p>
+<a href="https://github.com/domtronn/all-the-icons.el#resource-fonts">https://github.com/domtronn/all-the-icons.el#resource-fonts</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgee93509" class="outline-3">
+<h3 id="orgee93509">Configuration</h3>
+<div class="outline-text-3" id="text-orgee93509">
+<p>
+As the Quick Start mentioned, the easiest way to install and configure Eyeliner is to
+use straight.el
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #e0c584;">(</span><span style="color: #8AC6F2;">use-package</span> <span style="color: #635770;">eyeliner</span>
+  <span style="color: #BF93C3;">:straight</span> <span style="color: #aa84e0;">(</span>eyeliner <span style="color: #BF93C3;">:type</span> git
+                      <span style="color: #BF93C3;">:host</span> github
+                      <span style="color: #BF93C3;">:repo</span> <span style="color: #86B187;">"dustinlacewell/eyeliner"</span><span style="color: #aa84e0;">)</span>
+  <span style="color: #BF93C3;">:config</span>
+  <span style="color: #aa84e0;">(</span><span style="color: #8AC6F2;">require</span> '<span style="color: #635770;">eyeliner</span><span style="color: #aa84e0;">)</span>
+  <span style="color: #aa84e0;">(</span>eyeliner/install<span style="color: #aa84e0;">)</span><span style="color: #e0c584;">)</span>
+</pre>
+</div>
+
+<p>
+But you can use use-package without straight.el if you install Eyeliner to your
+<code>load-path</code> some other way.
+</p>
+</div>
+
+
+<div id="outline-container-org93d3e26" class="outline-4">
+<h4 id="org93d3e26">Designing Your Mode-line</h4>
+<div class="outline-text-4" id="text-org93d3e26">
+<p>
+Specifying what Segments make up your mode-line can be done in two different
+ways. The first is by assigning lists containing the names of your Segments to
+<code>eyeliner/left-hand-segments</code> and <code>eyeliner/right-hand-segments</code> before calling
+<code>(eyeliner/install)</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #e0c584;">(</span><span style="color: #8AC6F2;">use-package</span> <span style="color: #635770;">eyeliner</span>
+  <span style="color: #BF93C3;">:straight</span> <span style="color: #aa84e0;">(</span>eyeliner <span style="color: #BF93C3;">:type</span> git
+                      <span style="color: #BF93C3;">:host</span> github
+                      <span style="color: #BF93C3;">:repo</span> <span style="color: #86B187;">"dustinlacewell/eyeliner"</span><span style="color: #aa84e0;">)</span>
+  <span style="color: #BF93C3;">:config</span>
+  <span style="color: #aa84e0;">(</span><span style="color: #8AC6F2;">require</span> '<span style="color: #635770;">eyeliner</span><span style="color: #aa84e0;">)</span>
+
+  <span style="color: #aa84e0;">(</span><span style="color: #8AC6F2;">setq</span> eyeliner/left-hand-segments
+        '<span style="color: #84e090;">(</span><span style="color: #e08493;">(</span>eyeliner/buffer-modified<span style="color: #e08493;">)</span>
+          <span style="color: #e08493;">(</span>eyeliner/branch-icon <span style="color: #BF93C3;">:skip-alternate</span> t <span style="color: #BF93C3;">:tight-right</span> t<span style="color: #e08493;">)</span>
+          <span style="color: #e08493;">(</span>eyeliner/branch-name<span style="color: #e08493;">)</span>
+          <span style="color: #e08493;">(</span>eyeliner/project-name <span style="color: #BF93C3;">:skip-alternate</span> t<span style="color: #e08493;">)</span>
+          <span style="color: #e08493;">(</span>eyeliner/mode-icon <span style="color: #BF93C3;">:skip-alternate</span> t <span style="color: #BF93C3;">:tight</span> t<span style="color: #e08493;">)</span>
+          <span style="color: #e08493;">(</span>eyeliner/buffer-name<span style="color: #e08493;">)</span><span style="color: #84e090;">)</span>
+
+        eyeliner/right-hand-segments
+        '<span style="color: #84e090;">(</span><span style="color: #e08493;">(</span><span style="color: #86B187;">"%l:%c"</span><span style="color: #e08493;">)</span><span style="color: #84e090;">)</span><span style="color: #aa84e0;">)</span>
+
+  <span style="color: #aa84e0;">(</span>eyeliner/install<span style="color: #aa84e0;">)</span><span style="color: #e0c584;">)</span>
+</pre>
+</div>
+
+<p>
+Alternatively, you can pass these directly to <code>(eyeliner/install)</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #e0c584;">(</span><span style="color: #8AC6F2;">use-package</span> <span style="color: #635770;">eyeliner</span>
+  <span style="color: #BF93C3;">:straight</span> <span style="color: #aa84e0;">(</span>eyeliner <span style="color: #BF93C3;">:type</span> git
+                      <span style="color: #BF93C3;">:host</span> github
+                      <span style="color: #BF93C3;">:repo</span> <span style="color: #86B187;">"dustinlacewell/eyeliner"</span><span style="color: #aa84e0;">)</span>
+  <span style="color: #BF93C3;">:config</span>
+  <span style="color: #aa84e0;">(</span><span style="color: #8AC6F2;">require</span> '<span style="color: #635770;">eyeliner</span><span style="color: #aa84e0;">)</span>
+
+  <span style="color: #aa84e0;">(</span>eyeliner/install
+        '<span style="color: #84e090;">(</span><span style="color: #e08493;">(</span>eyeliner/buffer-modified<span style="color: #e08493;">)</span>
+          <span style="color: #e08493;">(</span>eyeliner/branch-icon <span style="color: #BF93C3;">:skip-alternate</span> t <span style="color: #BF93C3;">:tight-right</span> t<span style="color: #e08493;">)</span>
+          <span style="color: #e08493;">(</span>eyeliner/branch-name<span style="color: #e08493;">)</span>
+          <span style="color: #e08493;">(</span>eyeliner/project-name <span style="color: #BF93C3;">:skip-alternate</span> t<span style="color: #e08493;">)</span>
+          <span style="color: #e08493;">(</span>eyeliner/mode-icon <span style="color: #BF93C3;">:skip-alternate</span> t <span style="color: #BF93C3;">:tight</span> t<span style="color: #e08493;">)</span>
+          <span style="color: #e08493;">(</span>eyeliner/buffer-name<span style="color: #e08493;">)</span><span style="color: #84e090;">)</span>
+        '<span style="color: #84e090;">(</span><span style="color: #e08493;">(</span><span style="color: #86B187;">"%l:%c"</span><span style="color: #e08493;">)</span><span style="color: #84e090;">)</span><span style="color: #aa84e0;">)</span><span style="color: #e0c584;">)</span>
+</pre>
+</div>
+
+<p>
+Any Segment properties specified here will override those defined on the Segment
+itself. Refer to the <a href="https://github.com/TheBB/spaceline#properties">Spaceline documentation</a> to learn aobut them.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1483428" class="outline-4">
+<h4 id="org1483428">Customizing Built-In Segment Colors</h4>
+<div class="outline-text-4" id="text-org1483428">
+<p>
+Eyeliner comes with a number of default Segments to get you started. They all
+utilize some default colors which you can customize:
+</p>
+
+<ul class="org-ul">
+<li><code>eyeliner/warm-color</code> for when something might need attending to</li>
+<li><code>eyeliner/cool-color</code> for when something is A-OK</li>
+<li><code>eyeliner/plain-color</code> a neutral color for other situations</li>
+</ul>
+
+<p>
+To customize these, simply assign a color to them with <code>setq</code> <b>BEFORE</b> (!) you load the
+library. This can be done using the <code>:init</code> section of a <code>(use-package)</code> call:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #e0c584;">(</span><span style="color: #8AC6F2;">use-package</span> <span style="color: #635770;">eyeliner</span>
+  <span style="color: #BF93C3;">:straight</span> <span style="color: #aa84e0;">(</span>eyeliner <span style="color: #BF93C3;">:type</span> git
+                      <span style="color: #BF93C3;">:host</span> github
+                      <span style="color: #BF93C3;">:repo</span> <span style="color: #86B187;">"dustinlacewell/eyeliner"</span><span style="color: #aa84e0;">)</span>
+  <span style="color: #BF93C3;">:init</span>
+  <span style="color: #aa84e0;">(</span><span style="color: #8AC6F2;">setq</span> eyeliner/warm-color <span style="color: #86B187;">"salmon"</span><span style="color: #aa84e0;">)</span>
+  <span style="color: #aa84e0;">(</span><span style="color: #8AC6F2;">setq</span> eyeliner/cool-color <span style="color: #86B187;">"violet"</span><span style="color: #aa84e0;">)</span>
+  <span style="color: #aa84e0;">(</span><span style="color: #8AC6F2;">setq</span> eyeliner/plain-color <span style="color: #86B187;">"yellow"</span><span style="color: #aa84e0;">)</span>
+
+  <span style="color: #BF93C3;">:config</span>
+  <span style="color: #aa84e0;">(</span><span style="color: #8AC6F2;">require</span> '<span style="color: #635770;">eyeliner</span><span style="color: #aa84e0;">)</span>
+  <span style="color: #aa84e0;">(</span>eyeliner/install<span style="color: #aa84e0;">)</span><span style="color: #e0c584;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org0131bda" class="outline-3">
+<h3 id="org0131bda">Built-In Segments</h3>
+<div class="outline-text-3" id="text-org0131bda">
+</div>
+<div id="outline-container-org584f512" class="outline-4">
+<h4 id="org584f512">buffer-modified</h4>
+<div class="outline-text-4" id="text-org584f512">
+<ul class="org-ul">
+<li><b>Buffer modified</b>: <code>circle-o</code> icon in <code>eyeliner/cool-color</code></li>
+<li><b>Buffer unmodified</b>: <code>dot-circle-o</code> icon in <code>eyeliner/warm-color</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge513adf" class="outline-4">
+<h4 id="orge513adf">buffer-name</h4>
+<div class="outline-text-4" id="text-orge513adf">
+<ul class="org-ul">
+<li><b>Buffer modified</b>: the buffer name in <code>eyeliner/plain-color</code></li>
+<li><b>Buffer unmodified</b>: the buffer name in <code>eyeliner/warm-color</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7cacad2" class="outline-4">
+<h4 id="org7cacad2">branch-icon</h4>
+<div class="outline-text-4" id="text-org7cacad2">
+<ul class="org-ul">
+<li><b>No staged or unstaged changes</b>: <code>git-branch</code> icon in <code>eyeliner/cool-color</code></li>
+<li><b>Staged or unstaged changes</b>: <code>diff-added</code> icon in <code>eyeliner/warm-color</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org599ad2f" class="outline-4">
+<h4 id="org599ad2f">branch-name</h4>
+<div class="outline-text-4" id="text-org599ad2f">
+<ul class="org-ul">
+<li><b>No staged or unstaged changes</b>: the branch name in <code>eyeliner/cool-color</code></li>
+<li><b>Staged or unstaged changes</b>: the branch name in <code>eyeliner/warm-color</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcdfd4b0" class="outline-4">
+<h4 id="orgcdfd4b0">project-name</h4>
+<div class="outline-text-4" id="text-orgcdfd4b0">
+<p>
+<code>(projectile-project-name)</code> in <code>eyeliner/plain-color</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org06a3799" class="outline-4">
+<h4 id="org06a3799">mode-icon</h4>
+<div class="outline-text-4" id="text-org06a3799">
+<p>
+Major-mode relevant icon in <code>eyeliner/plain-color</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2018-07-21 Sat 15:24</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
