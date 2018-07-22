@@ -319,7 +319,7 @@
           'help-echo (format "Major-mode: `%s'" major-mode)
           'display '(raise 0)
           'face `(
-                  :foreground eyeliner/plain-color
+                  :foreground ,eyeliner/plain-color
                   :height 0.9
                   :family ,(all-the-icons-icon-family-for-mode major-mode)
                   :inherit)))))
