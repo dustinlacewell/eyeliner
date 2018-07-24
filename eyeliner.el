@@ -220,19 +220,28 @@
 
 (eyeliner/segment eyeliner/project-name
   (when (projectile-project-p)
-    (eyeliner/project-name-style (projectile-project-name))))
+      (eyeliner/project-name-style (projectile-project-name))))
 
 (eyeliner/segment eyeliner/mode-icon
-  (let ((icon (all-the-icons-icon-for-mode major-mode)))
-    (when icon
-      (propertize icon
-        'help-echo (format "Major-mode: `%s'" major-mode)
-        'display '(raise 0)
-        'face `(
-                :foreground ,eyeliner/plain-color
-                :height 0.9
-                :family ,(all-the-icons-icon-family-for-mode major-mode)
-                :inherit)))))
+  (let* ((icon) (all-the-icons-icon-for-mode major-mode))
+    (if icon
+        (propertize icon
+          'help-echo (format "Major-mode!: `%s'" major-mode)
+          'display '(raise 0)
+          'face `(
+                  :foreground ,eyeliner/plain-color
+                  :height 0.9
+                  :family ,(all-the-icons-icon-family-for-mode major-mode)
+                  :inherit))
+      (eyeliner/with-icon "emacs"
+        (propertize icon
+          'help-echo (format "Major-mode: `%s'" major-mode)
+          'display '(raise 0)
+          'face `(
+                  :foreground ,eyeliner/plain-color
+                  :height 0.9
+                  :family ,family
+                  :inherit))))))
 
 (provide 'eyeliner)
 ;;; eyeliner.el ends here
