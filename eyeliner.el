@@ -30,8 +30,8 @@
 
 (defun eyeliner/transform (form)
   "Transform FORM into a form suitable for a let binding"
-  (if (ignore-errors (fboundp expr)) `(it (apply (quote ,expr) (list it)))
-    `(it ,expr)))
+  (if (ignore-errors (fboundp form)) `(it (apply (quote ,form) (list it)))
+    `(it ,form)))
 
 (defmacro eyeliner/pipeline (value &rest exprs)
   "Bind VALUE to 'it and evaluate each of EXPRS. The result of
@@ -47,7 +47,7 @@
 
 (defun eyeliner/adjust-color (color &optional darkness desaturation)
   "Return COLOR modified by DARKNESS and DESATURATION"
-  (pipeline color
+  (eyeliner/pipeline color
     (color-darken-name it (or darkness eyeliner/default-darkness))
     (color-desaturate-name it (or desaturation eyeliner/default-desaturation))))
 
